@@ -16,7 +16,7 @@
         <xsl:comment>Transformed by OAIPMH2MARC_AUTHORITY.xsl
     Script designed to create RDA person authority records from JMU ETD submission metadata
     Created by Steven W. Holloway, Head of Metadata Services  at James Madison University
-    Modified 05/06/2016 by Rebecca B. French and Steven W. Holloway
+    Modified 02/23/2017 by Rebecca B. French and Steven W. Holloway
     This software is distributed under a Creative Commons Attribution Non-Commercial License</xsl:comment>
         <xsl:apply-templates/>
     </xsl:template>

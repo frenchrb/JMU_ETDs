@@ -14,7 +14,7 @@
         <xsl:comment>Transformed by OAIPMH2MARC_BIB.xsl
     Script is designed to create RDA bibliographic records from JMU ETD metadata
     Created by Steven W. Holloway, Head of Metadata Services at James Madison University
-    Modified 05/20/2016 by Rebecca B. French and Steven W. Holloway
+    Modified 02/23/2017 by Rebecca B. French and Steven W. Holloway
     This software is distributed under a Creative Commons Attribution Non-Commercial License</xsl:comment>
         <xsl:apply-templates/>
     </xsl:template>

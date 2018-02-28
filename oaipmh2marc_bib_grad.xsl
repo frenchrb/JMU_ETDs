@@ -469,8 +469,8 @@
                 </marc:subfield>
             </marc:datafield>
             
-            <!-- Insert 590 dissertant-supplied bepress disciplines -->
-            <marc:datafield tag="590" ind1=" " ind2=" ">
+            <!-- Insert 500 with dissertant-supplied bepress disciplines -->
+            <marc:datafield tag="500" ind1=" " ind2=" ">
                 <marc:subfield code="a">
                     <xsl:text>Dissertant-supplied disciplines: </xsl:text>
                     <xsl:for-each select="dc:subject.disciplines">

@@ -48,8 +48,7 @@
                 <xsl:when test="../etdms:identifier.orcid/text()">
                     <marc:datafield tag="024" ind1="7" ind2=" ">
                         <marc:subfield code="a">
-                            <xsl:value-of select="../etdms:identifier.orcid"
-                            />
+                            <xsl:value-of select="../etdms:identifier.orcid"/>
                         </marc:subfield>
                         <marc:subfield code="2">orcid</marc:subfield>
                     </marc:datafield>

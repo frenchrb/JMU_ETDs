@@ -517,8 +517,7 @@
                 </marc:subfield>
             </marc:datafield>
             
-            <!-- Insert 856 if URL is available -->
-            <!-- QUESTION: why is this "if available"? -->
+            <!-- Insert 856 with URL -->
             <xsl:if test="dc:identifier.url/text()">
                 <marc:datafield tag="856" ind1="4" ind2="0">
                     <marc:subfield code="z">

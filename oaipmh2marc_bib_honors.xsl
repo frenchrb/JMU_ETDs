@@ -383,6 +383,30 @@
                 </marc:subfield>
             </marc:datafield>
             
+            <!-- Insert 506s with use restrictions -->
+            <marc:datafield tag="506" ind1="0" ind2=" ">
+                <marc:subfield code="a">
+                    <xsl:text>James Madison University Libraries is providing a metadata record and hyperlink to this full-text resource.</xsl:text>
+                </marc:subfield>
+                <marc:subfield code="f">
+                    <xsl:text>Unrestricted online access</xsl:text>
+                </marc:subfield>
+                <marc:subfield code="2">
+                    <xsl:text>star</xsl:text>
+                </marc:subfield>
+            </marc:datafield>
+            <marc:datafield tag="506" ind1="0" ind2=" ">
+                <marc:subfield code="a">
+                    <xsl:text>Open access content</xsl:text>
+                </marc:subfield>
+                <marc:subfield code="f">
+                    <xsl:text>Open access content</xsl:text>
+                </marc:subfield>
+                <marc:subfield code="2">
+                    <xsl:text>star</xsl:text>
+                </marc:subfield>
+            </marc:datafield>
+            
             <!-- Insert 516 -->
             <marc:datafield tag="516" ind1=" " ind2=" ">
                 <marc:subfield code="a">
@@ -401,6 +425,16 @@
             <marc:datafield tag="538" ind1=" " ind2=" ">
                 <marc:subfield code="a">
                     <xsl:text>System requirements: PDF reader.</xsl:text>
+                </marc:subfield>
+            </marc:datafield>
+            
+            <!-- Insert 540 -->
+            <marc:datafield tag="540" ind1=" " ind2=" ">
+                <marc:subfield code="a">
+                    <xsl:text>This work is licensed under a Creative Commons Attribution-NonCommercial-No Derivative Works 4.0 License.</xsl:text>
+                </marc:subfield>
+                <marc:subfield code="u">
+                    <xsl:text>https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode</xsl:text>
                 </marc:subfield>
             </marc:datafield>
             

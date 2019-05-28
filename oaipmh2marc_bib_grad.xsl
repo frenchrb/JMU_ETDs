@@ -214,7 +214,7 @@
                 <marc:subfield code="a">[TODO]</marc:subfield>
             </marc:datafield>
             
-            <!-- Insert 100 with preferred form of name if available, otherwise use full name, followed by "dissertant" relator -->
+            <!-- Insert 100 with preferred form of name if available, otherwise use full name, followed by "dissertant" relator and ORCID identifier -->
             <marc:datafield tag="100" ind1="1" ind2=" ">
                 <marc:subfield code="a">
                     <xsl:choose>
@@ -230,6 +230,17 @@
                 <marc:subfield code="e">
                     <xsl:text>dissertant.</xsl:text>
                 </marc:subfield>
+                <xsl:if test="dc:identifier.orcid">
+                    <marc:subfield code="1">
+                        <xsl:analyze-string select="dc:identifier.orcid" regex="\d{{4}}-\d{{4}}-\d{{4}}-\d{{3}}[\dX]">
+                            <xsl:matching-substring>
+                                <xsl:text>https://orcid.org/</xsl:text>
+                                <xsl:value-of select="."/>
+                            </xsl:matching-substring>
+                        </xsl:analyze-string>
+                    </marc:subfield>
+                </xsl:if>
+                
             </marc:datafield>
             
             <!-- Insert 245 -->
@@ -448,6 +459,30 @@
                 </marc:subfield>
             </marc:datafield>
             
+            <!-- Insert 506s with use restrictions -->
+            <marc:datafield tag="506" ind1="0" ind2=" ">
+                <marc:subfield code="a">
+                    <xsl:text>James Madison University Libraries is providing a metadata record and hyperlink to this full-text resource.</xsl:text>
+                </marc:subfield>
+                <marc:subfield code="f">
+                    <xsl:text>Unrestricted online access</xsl:text>
+                </marc:subfield>
+                <marc:subfield code="2">
+                    <xsl:text>star</xsl:text>
+                </marc:subfield>
+            </marc:datafield>
+            <marc:datafield tag="506" ind1="0" ind2=" ">
+                <marc:subfield code="a">
+                    <xsl:text>Open access content</xsl:text>
+                </marc:subfield>
+                <marc:subfield code="f">
+                    <xsl:text>Open access content</xsl:text>
+                </marc:subfield>
+                <marc:subfield code="2">
+                    <xsl:text>star</xsl:text>
+                </marc:subfield>
+            </marc:datafield>
+            
             <!-- Insert 516 -->
             <marc:datafield tag="516" ind1=" " ind2=" ">
                 <marc:subfield code="a">
@@ -466,6 +501,16 @@
             <marc:datafield tag="538" ind1=" " ind2=" ">
                 <marc:subfield code="a">
                     <xsl:text>System requirements: PDF reader.</xsl:text>
+                </marc:subfield>
+            </marc:datafield>
+            
+            <!-- Insert 540 -->
+            <marc:datafield tag="540" ind1=" " ind2=" ">
+                <marc:subfield code="a">
+                    <xsl:text>This work is licensed under a Creative Commons Attribution-NonCommercial-No Derivative Works 4.0 License.</xsl:text>
+                </marc:subfield>
+                <marc:subfield code="u">
+                    <xsl:text>https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode</xsl:text>
                 </marc:subfield>
             </marc:datafield>
             

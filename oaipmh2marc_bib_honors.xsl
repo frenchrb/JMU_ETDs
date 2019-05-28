@@ -555,7 +555,7 @@
             <xsl:if test="dc:identifier.url/text()">
                 <marc:datafield tag="856" ind1="4" ind2="0">
                     <marc:subfield code="z">
-                        <xsl:text>Full-text of dissertation on the Internet (JMU users only)</xsl:text>
+                        <xsl:text>Full-text of dissertation on the Internet</xsl:text>
                     </marc:subfield>
                     <marc:subfield code="u">
                         <xsl:value-of select="dc:identifier.url"/>

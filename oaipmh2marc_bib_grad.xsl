@@ -378,7 +378,7 @@
                     <xsl:text>pdf</xsl:text>
                 </marc:subfield>
                 <marc:subfield code="2">
-                    <xsl:text>rda</xsl:text>
+                    <xsl:text>rdaft</xsl:text>
                 </marc:subfield>
             </marc:datafield>
             

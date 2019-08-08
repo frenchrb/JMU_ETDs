@@ -18,10 +18,10 @@
         </xsl:copy>
     </xsl:template>
     
-    <!-- Copy only records with specified year in date.dateSubmitted-->
+    <!-- Copy only records with specified date (year and month) in date.dateSubmitted-->
     <xsl:template match="oai:OAI-PMH/oai:ListRecords/oai:record">
         <xsl:choose>
-            <xsl:when test="oai:metadata/oai_dc:dc/dc:date.dateSubmitted[not(starts-with(., '2017'))]"/>
+            <xsl:when test="oai:metadata/oai_dc:dc/dc:date.dateSubmitted[not(starts-with(., '2018-05'))]"/>
             <xsl:otherwise>
                 <xsl:copy>
                     <xsl:apply-templates select="@*|node()"/>

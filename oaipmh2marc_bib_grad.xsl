@@ -187,6 +187,18 @@
                 <xsl:text>vau     obm   000 0 eng d</xsl:text>
             </marc:controlfield>
             
+            <!-- Insert DOI in 024 -->
+            <xsl:if test="dc:identifier.doi/text()">
+                <marc:datafield tag="024" ind1="7" ind2=" ">
+                    <marc:subfield code="a">
+                        <xsl:value-of select="replace(dc:identifier.doi, 'https://doi.org/', '')"/>
+                    </marc:subfield>
+                    <marc:subfield code="2">
+                        <xsl:text>doi</xsl:text>
+                    </marc:subfield>
+                </marc:datafield>
+            </xsl:if>
+            
             <!--Insert ARK identifier in 024 if available-->
             <xsl:if test="dc:identifier.ark/text()">
                 <marc:datafield tag="024" ind1="8" ind2=" ">
@@ -627,18 +639,29 @@
                 </marc:subfield>
             </marc:datafield>
             
-            <!-- Insert 856 with URL -->
-            <xsl:if test="dc:identifier.url/text()">
-                <marc:datafield tag="856" ind1="4" ind2="0">
-                    <marc:subfield code="z">
-                        <xsl:text>Full-text of dissertation on the Internet</xsl:text>
-                    </marc:subfield>
-                    <marc:subfield code="u">
-                        <xsl:value-of select="dc:identifier.url"/>
-                    </marc:subfield>
-                </marc:datafield>
-            </xsl:if>
-            
+            <!-- Insert 856 with URL, using DOI if available -->
+            <xsl:choose>
+                <xsl:when test="dc:identifier.doi/text()">
+                    <marc:datafield tag="856" ind1="4" ind2="0">
+                        <marc:subfield code="z">
+                            <xsl:text>Full-text of dissertation on the Internet</xsl:text>
+                        </marc:subfield>
+                        <marc:subfield code="u">
+                            <xsl:value-of select="dc:identifier.doi"/>
+                        </marc:subfield>
+                    </marc:datafield>
+                </xsl:when>
+                <xsl:when test="dc:identifier.url/text()">
+                    <marc:datafield tag="856" ind1="4" ind2="0">
+                        <marc:subfield code="z">
+                            <xsl:text>Full-text of dissertation on the Internet</xsl:text>
+                        </marc:subfield>
+                        <marc:subfield code="u">
+                            <xsl:value-of select="dc:identifier.url"/>
+                        </marc:subfield>
+                    </marc:datafield>
+                </xsl:when>
+            </xsl:choose>           
             
             <!-- Testing names 
             <xsl:if test="dc:creator.name.preferred/text()">

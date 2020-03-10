@@ -488,7 +488,7 @@
                     <xsl:text>Open access content</xsl:text>
                 </marc:subfield>
                 <marc:subfield code="f">
-                    <xsl:text>Open access content</xsl:text>
+                    <xsl:text>Unrestricted online access</xsl:text>
                 </marc:subfield>
                 <marc:subfield code="2">
                     <xsl:text>star</xsl:text>

@@ -115,7 +115,8 @@
                     <xsl:value-of select="format-dateTime(current-dateTime(),'[Y][M01][D01][H][m][s].[f,1-1]')"/>
                 </marc:controlfield>
                 <marc:controlfield tag="008">
-                    <!-- TODO -->
+                    <xsl:value-of select="format-dateTime(current-dateTime(), '[Y01][M01][D01]')"/>
+                    <xsl:text>n| azannaabn           a aaa     c</xsl:text>
                 </marc:controlfield>
                 
                 <!-- Insert 024 ORCiD identifier if available -->
@@ -253,6 +254,7 @@
                             <xsl:when test="../dc:publisher.degree.name='Bachelor of Business Administration (BBA)'">B.B.A.</xsl:when>
                             <xsl:when test="../dc:publisher.degree.name='Bachelor of Fine Arts (BFA)'">B.F.A.</xsl:when>
                             <xsl:when test="../dc:publisher.degree.name='Bachelor of Music (BM)'">B.M.</xsl:when>
+                            <xsl:when test="../dc:publisher.degree.name='Doctor of Nursing Practice (DNP)'">D.N.P.</xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="../dc:publisher.degree.name"/>
                             </xsl:otherwise>

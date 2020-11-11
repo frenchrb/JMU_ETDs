@@ -129,22 +129,11 @@
                         </xsl:analyze-string>     
                     </xsl:variable>
                     
-                    <marc:datafield tag="024" ind1="7" ind2=" ">
-                        <marc:subfield code="a">
-                                <xsl:value-of select="$orcid"/>
+                    <marc:datafield tag="024" ind1="8" ind2=" ">
+                        <marc:subfield code="1">
+                            <xsl:value-of select="concat('https://orcid.org/', $orcid)"/>
                             </marc:subfield>
-                            <marc:subfield code="2">
-                                <xsl:text>orcid</xsl:text>
-                            </marc:subfield>
-                        </marc:datafield>
-                        <marc:datafield tag="024" ind1="7" ind2=" ">
-                            <marc:subfield code="a">
-                                <xsl:value-of select="concat('http://orcid.org/', $orcid)"/>
-                            </marc:subfield>
-                            <marc:subfield code="2">
-                                <xsl:text>uri</xsl:text>
-                            </marc:subfield>
-                        </marc:datafield>
+                    </marc:datafield>
                 </xsl:if>
                 
                 <!-- Insert 040 -->

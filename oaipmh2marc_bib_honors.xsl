@@ -473,25 +473,7 @@
                 </marc:datafield>
             </xsl:for-each>
             
-            <!-- Insert 655s -->
-            <marc:datafield tag="655" ind1=" " ind2="4">
-                <marc:subfield code="a">
-                    <xsl:text>E-theses.</xsl:text>
-                </marc:subfield>
-            </marc:datafield>
-            
-            <marc:datafield tag="655" ind1=" " ind2="7">
-                <marc:subfield code="a">
-                    <xsl:text>E-books.</xsl:text>
-                </marc:subfield>
-                <marc:subfield code="2">
-                    <xsl:text>aat</xsl:text>
-                </marc:subfield>
-                <marc:subfield code="0">
-                    <xsl:text>http://vocab.getty.edu/aat/300265554</xsl:text>
-                </marc:subfield>
-            </marc:datafield>
-            
+            <!-- Insert 655 -->
             <marc:datafield tag="655" ind1=" " ind2="7">
                 <marc:subfield code="a">
                     <xsl:text>Academic theses.</xsl:text>

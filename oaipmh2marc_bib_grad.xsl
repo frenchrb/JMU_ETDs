@@ -242,6 +242,9 @@
                 <marc:subfield code="e">
                     <xsl:text>dissertant.</xsl:text>
                 </marc:subfield>
+                <marc:subfield code="4">
+                    <xsl:text>http://id.loc.gov/vocabulary/relators/dis</xsl:text>
+                </marc:subfield>
                 <xsl:if test="dc:identifier.orcid">
                     <marc:subfield code="1">
                         <xsl:analyze-string select="dc:identifier.orcid" regex="\d{{4}}-\d{{4}}-\d{{4}}-\d{{3}}[\dX]">
@@ -251,8 +254,7 @@
                             </xsl:matching-substring>
                         </xsl:analyze-string>
                     </marc:subfield>
-                </xsl:if>
-                
+                </xsl:if>      
             </marc:datafield>
             
             <!-- Insert 245 -->
@@ -573,6 +575,9 @@
                         <marc:subfield code="e">
                             <xsl:text>dissertant.</xsl:text>
                         </marc:subfield>
+                        <marc:subfield code="4">
+                            <xsl:text>http://id.loc.gov/vocabulary/relators/dis</xsl:text>
+                        </marc:subfield>
                     </marc:datafield>
                 </xsl:for-each>
             </xsl:if>
@@ -597,6 +602,9 @@
                     <marc:subfield code="e">
                         <xsl:text>thesis advisor.</xsl:text>
                     </marc:subfield>
+                    <marc:subfield code="4">
+                        <xsl:text>http://www.rdaregistry.info/Elements/a/#P50091</xsl:text>
+                    </marc:subfield>
                 </marc:datafield>
             </xsl:for-each>
             
@@ -608,6 +616,9 @@
                 <marc:subfield code="e">
                     <xsl:text>degree granting institution.</xsl:text>
                 </marc:subfield>
+                <marc:subfield code="4">
+                    <xsl:text>http://www.rdaregistry.info/Elements/a/#P50003</xsl:text>
+                </marc:subfield>
             </marc:datafield>
             
             <!-- Insert 710 JMU department -->
@@ -617,7 +628,15 @@
                 </marc:subfield>
                 <marc:subfield code="b">
                     <xsl:value-of select="dc:publisher.department"/>
-                    <xsl:text>.</xsl:text>
+                    <xsl:if test="not(ends-with(dc:publisher.department, ')'))">
+                        <xsl:text>,</xsl:text>
+                    </xsl:if>
+                </marc:subfield>
+                <marc:subfield code="e">
+                    <xsl:text>sponsoring body.</xsl:text>
+                </marc:subfield>
+                <marc:subfield code="4">
+                    <xsl:text>http://www.rdaregistry.info/Elements/a/#P50009</xsl:text>
                 </marc:subfield>
             </marc:datafield>
             

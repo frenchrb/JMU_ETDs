@@ -473,6 +473,9 @@
                         <!-- Capitalize first letter -->
                         <xsl:value-of select="concat(upper-case(substring(., 1, 1)), substring(., 2))"/>
                     </marc:subfield>
+                    <marc:subfield code="7">
+                        <xsl:text>(dpeaa)Dissertant-supplied subject heading</xsl:text>
+                    </marc:subfield>
                 </marc:datafield>
             </xsl:for-each>
             

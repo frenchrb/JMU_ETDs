@@ -161,8 +161,8 @@
                 <marc:subfield code="a">VMCI</marc:subfield>
             </marc:datafield>
             
-            <!-- Insert local call number in 090 -->
-            <marc:datafield tag="090" ind1=" " ind2=" ">
+            <!-- Insert local call number in 050 -->
+            <marc:datafield tag="050" ind1=" " ind2="4">
                 <marc:subfield code="a">[TODO]</marc:subfield>
             </marc:datafield>
             

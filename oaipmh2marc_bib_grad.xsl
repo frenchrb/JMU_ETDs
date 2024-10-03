@@ -172,7 +172,7 @@
         
         <marc:record>
             <!-- Insert leader and control fields -->
-            <marc:leader><xsl:text>     nam a22     Ii 4500</xsl:text></marc:leader>
+            <marc:leader><xsl:text>     nam a22      i 4500</xsl:text></marc:leader>
             <marc:controlfield tag="005">
                 <xsl:value-of select="format-dateTime(current-dateTime(),'[Y0001][M01][D01][H][m][s].[f01]')"/>
             </marc:controlfield>

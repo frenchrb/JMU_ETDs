@@ -266,6 +266,10 @@
                         </xsl:if>-->
                         <xsl:text>)</xsl:text>
                     </marc:subfield>
+                    
+                    <marc:subfield code="u">
+                        <xsl:value-of select="../dc:identifier.url"/>
+                    </marc:subfield>
                 </marc:datafield>
 
                 <!-- Testing names 

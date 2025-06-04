@@ -123,7 +123,7 @@
                 <xsl:value-of select="format-dateTime(current-dateTime(), '[Y01][M01][D01]')"/>
                 <xsl:text>t</xsl:text>
                 <xsl:value-of select="substring(dc:date.available, 1, 4)"/>
-                <xsl:value-of select="substring(dc:date.dateSubmitted, 1, 4)"/>
+                <xsl:value-of select="substring(dc:date.created, 1, 4)"/>
                 <xsl:text>vau     obm   000 0 eng d</xsl:text>
             </marc:controlfield>
             
@@ -261,7 +261,7 @@
             <marc:datafield tag="264" ind1=" " ind2="4">
                 <marc:subfield code="c">
                     <xsl:text>&#xa9;</xsl:text>
-                    <xsl:value-of select="substring(dc:date.dateSubmitted, 1, 4)"/>
+                    <xsl:value-of select="substring(dc:date.created, 1, 4)"/>
                 </marc:subfield>
             </marc:datafield>
             
@@ -378,7 +378,7 @@
                     <xsl:text>James Madison University</xsl:text>
                 </marc:subfield>
                 <marc:subfield code="d">
-                    <xsl:value-of select="substring(dc:date.dateSubmitted, 1, 4)"/>
+                    <xsl:value-of select="substring(dc:date.created, 1, 4)"/>
                     <xsl:text>.</xsl:text>
                 </marc:subfield>
             </marc:datafield>
